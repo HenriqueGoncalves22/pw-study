@@ -7,21 +7,27 @@ import lombok.Setter;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "tbl_disponibilidade")
+@Table(name = "TBL_DISPONIBILIDADE")
 @Getter
 @Setter
 public class Disponibilidade {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID_DISPONIBILIDADE")
     private Long id;
 
-    private String tx_dia_semana;
-    private LocalDateTime dt_das;
-    private LocalDateTime dt_ate;
-    private Long id_monitor;
+    @Column(name = "TX_DIA_SEMANA")
+    @Enumerated(EnumType.STRING)
+    private DiaSemanaEnum diaSemana;
+
+    @Column(name = "DT_DAS")
+    private LocalDateTime das;
+
+    @Column(name = "DT_ATE")
+    private LocalDateTime ate;
 
     @ManyToOne
-    @JoinColumn(name = "id_monitor")
+    @JoinColumn(name = "ID_MONITOR")
     private Monitor monitor;
 
 

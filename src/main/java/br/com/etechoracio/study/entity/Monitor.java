@@ -6,22 +6,32 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "tbl_monitor")
+@Table(name = "TBL_MONITOR")
 @Getter
 @Setter
 public class Monitor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID_MONITOR")
     private Long id;
-    private String tx_nome;
-    private String tx_foto;
-    private String tx_whatsapp;
-    private String tx_email;
-    private String tx_conteudo;
-    private Long id_disciplina;
 
-    @OneToMany
-    @JoinColumn(name = "id_disciplina")
+    @Column(name = "TX_NOME")
+    private String nome;
+
+    @Column(name = "TX_FOTO")
+    private String oto;
+
+    @Column(name = "TX_WHATSAPP")
+    private String whatsapp;
+
+    @Column(name = "TX_EMAIL")
+    private String email;
+
+    @Column(name = "TX_CONTEUDO")
+    private String conteudo;
+
+    @ManyToOne
+    @JoinColumn(name = "ID_DISCIPLINA")
     private Disciplina disciplina;
 
 }

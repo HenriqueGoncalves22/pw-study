@@ -6,7 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "tbl_rel_tutor_disponibilidade")
+@Table(name = "TBL_REL_TUTOR_DISPONIBILIDADE")
 @Getter
 @Setter
 public class RelTutorDisponibilidade {
@@ -19,7 +19,7 @@ public class RelTutorDisponibilidade {
     private Monitor monitor;
 
     @ManyToMany
-    @JoinColumn(name = "id_disponibilidade")
+    @JoinColumn(name = "ID_DISPONIBILIDADE")
     private Disponibilidade disponibilidade;
 
 }
