@@ -1,15 +1,16 @@
 package br.com.etechoracio.study.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table(name = "tbl_disciplina")
+@Getter
+@Setter
 public class Disciplina {
     @Id
-    @Column(name = "id_disciplina", columnDefinition = "numeric")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String nome;
