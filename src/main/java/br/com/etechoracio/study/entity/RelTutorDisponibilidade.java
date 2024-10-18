@@ -15,7 +15,7 @@ public class RelTutorDisponibilidade {
     private Long id_disponilidade;
 
     @ManyToMany
-    @JoinColumn(name = "id_monitor")
+    @JoinColumn(name = "ID_MONITOR")
     private Monitor monitor;
 
     @ManyToMany
